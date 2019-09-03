@@ -83,6 +83,7 @@
     "rho": "^0.3.0",
     "rollup": "^0.41.6",
     "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-node-resolve": "2.0.0",    
     "selenium-webdriver": "^2.53.3",
     "semver": "^5.1.0",
     "sorcery": "^0.10.0",

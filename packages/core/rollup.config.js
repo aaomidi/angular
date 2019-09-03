@@ -6,18 +6,17 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
+ import resolve from 'rollup-plugin-node-resolve';
+ import commonjs from 'rollup-plugin-commonjs';
+
 export default {
   entry: '../../dist/packages-dist/core/@angular/core.es5.js',
   dest: '../../dist/packages-dist/core/bundles/core.umd.js',
   format: 'umd',
   exports: 'named',
   moduleName: 'ng.core',
-  globals: {
-    'rxjs/Observable': 'Rx',
-    'rxjs/Subject': 'Rx',
-    'rxjs/Observer': 'Rx',
-    'rxjs/Subscription': 'Rx',
-    'rxjs/observable/merge': 'Rx.Observable',
-    'rxjs/operator/share': 'Rx.Observable.prototype'
-  }
+  plugins:[
+    resolve(),
+    commonjs(),
+  ]
 };

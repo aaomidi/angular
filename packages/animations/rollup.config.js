@@ -14,7 +14,12 @@ export default {
   moduleName: 'ng.animations',
   globals: {
     '@angular/core': 'ng.core',
-    'rxjs/Observable': 'Rx',
-    'rxjs/Subject': 'Rx',
-  }
+  },
+  plugins:[
+    resolve({
+      jsnext: true,
+      skip: ['@angular/core']
+    }),
+    commonjs(),
+  ]
 };

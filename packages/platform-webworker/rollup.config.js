@@ -18,5 +18,12 @@ export default {
     '@angular/platform-browser': 'ng.platformBrowser',
     'rxjs/Observable': 'Rx',
     'rxjs/Subject': 'Rx'
-  }
+  },
+  plugins:[
+    resolve({
+      jsnext: true,
+      skip: ['@angular/core', '@angular/common', '@angular/platform-browser']
+    }),
+    commonjs(),
+  ]
 };

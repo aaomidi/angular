@@ -16,7 +16,12 @@ export default {
     '@angular/core': 'ng.core',
     '@angular/compiler': 'ng.compiler',
     '@angular/platform-browser': 'ng.platformBrowser',
-    'rxjs/Observable': 'Rx',
-    'rxjs/Subject': 'Rx'
-  }
+  },
+  plugins:[
+    resolve({
+      jsnext: true,
+      skip: ['@angular/core', '@angular/compiler', '@angular/platform-browser']
+    }),
+    commonjs(),
+  ]
 };

@@ -22,5 +22,12 @@ export default {
     'rxjs/observable/fromPromise': 'Rx.Observable',
     'rxjs/observable/forkJoin': 'Rx.Observable',
     'rxjs/operator/map': 'Rx.Observable.prototype'
-  }
+  },
+  plugins:[
+    resolve({
+      jsnext: true,
+      skip: ['@angular/core', '@angular/common', '@angular/compiler', '@angular/platform-browser']
+    }),
+    commonjs(),
+  ]
 };

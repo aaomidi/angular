@@ -18,10 +18,12 @@ export default {
     '@angular/compiler': 'ng.compiler',
     '@angular/platform-browser': 'ng.platformBrowser',
     '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
-    'rxjs/Subject': 'Rx',
-    'rxjs/observable/PromiseObservable': 'Rx',  // this is wrong, but this stuff has changed in rxjs
-                                                // b.6 so we need to fix it when we update.
-    'rxjs/operator/toPromise': 'Rx.Observable.prototype',
-    'rxjs/Observable': 'Rx',
-  }
+  },
+  plugins:[
+    resolve({
+      jsnext: true,
+      skip: ['@angular/core', '@angular/common', '@angular/compiler', '@angular/platform-browser', '@angular/platform-browser-dynamic']
+    }),
+    commonjs(),
+  ]
 };

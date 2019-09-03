@@ -18,5 +18,12 @@ export default {
     '@angular/common': 'ng.common',
     '@angular/compiler': 'ng.compiler',
     '@angular/platform-browser': 'ng.platformBrowser',
-  }
+  },
+  plugins:[
+    resolve({
+      jsnext: true,
+      skip: ['@angular/core', '@angular/common', '@angular/compiler', '@angular/platform-browser']
+    }),
+    commonjs(),
+  ]
 };
